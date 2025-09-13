@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme {
+  --color-background-main: var(--ui-bg);
+  --color-background-navigation: var(--nav-color);
+  --img-color-logo: var(--img-color-logo);
+  --text-color: var(--text-color);
+}
+
+:root {
+  --nav-color: #dedede;
+  --ui-bg: #eeeeee;
+  --img-color-logo: invert(1);
+  --text-color: #213547;
+}
+
+.dark {
+  --nav-color: #181818;
+  --ui-bg: #212121;
+  --img-color-logo: invert(0);
+  --text-color: #ffffff;
+}
