@@ -6,6 +6,7 @@ import ui from "@nuxt/ui/vue-plugin";
 import router from "./router/index";
 import VueNativeSock from "vue-native-websocket-vue3";
 import GlobalComponents from "./Plugins/GlobalComponent";
+import "remixicon/fonts/remixicon.css";
 
 const app = createApp(App);
 

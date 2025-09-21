@@ -1,4 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
 @import "tailwindcss";
+@tailwind utilities;
 @import "@nuxt/ui";
 
 @theme {
@@ -6,18 +8,39 @@
   --color-background-navigation: var(--nav-color);
   --img-color-logo: var(--img-color-logo);
   --text-color: var(--text-color);
+  --paragraph-color: var(--paragraph-color);
+  --color-primary: var(--primary-color);
+  --border: var(--border);
+  --bg-card: var(--bg-card);
+  --bg-input: var(--bg-input);
+  --gradient-primary: var(--gradient-primary);
 }
 
 :root {
-  --nav-color: #dedede;
-  --ui-bg: #eeeeee;
+  --nav-color: #ffffff80;
+  --ui-bg: #f6f7f9;
   --img-color-logo: invert(1);
   --text-color: #213547;
+  --paragraph-color: #626d84;
+  --primary-color: #287eef;
+  --border: #dcdfe5;
+  --bg-card: #ffffff;
+  --bg-input: #f6f7f9;
+  --gradient-primary: linear-gradient(
+    135deg,
+    hsl(210 95% 55%),
+    hsl(260 60% 45%)
+  );
+  --bg-success: #e6f4ea;
 }
 
 .dark {
-  --nav-color: #181818;
-  --ui-bg: #212121;
+  --nav-color: #0f131a80;
+  --ui-bg: #0b0e13;
   --img-color-logo: invert(0);
   --text-color: #ffffff;
+  --paragraph-color: #7b879d;
+  --border: #1f2533;
+  --bg-card: #0f131a;
+  --bg-input: #0b0e13;
 }

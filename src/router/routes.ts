@@ -12,11 +12,23 @@ const routes = [
     meta: { layout: "default" },
   },
   {
-    path: "/matching",
-    name: "matching",
-    component: () => import("../pages/MatchingPage.vue"),
+    path: "/finger-matching",
+    name: "Finger Matching",
+    component: () => import("../pages/MatchingFingerPrint.vue"),
     meta: { layout: "default" },
   },
+  {
+    path: "/user-management",
+    name: "User Management",
+    component: () => import("../pages/UserManagement.vue"),
+    meta: { layout: "default" },
+  },
+  {
+    path: "/audit-log",
+    name: "Audit Log",
+    component: () => import("../pages/AuditLog.vue"),
+    meta: { layout: "default" },
+  }
 ];
 
 export default routes;
