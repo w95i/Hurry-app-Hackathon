@@ -123,7 +123,6 @@
 
 <script setup lang="ts">
 import { ref, onMounted, watch } from "vue";
-import { useRouter } from "vue-router";
 import Progress from "../components/UI/progress.vue";
 import FingerPrints from "../components/Fingerprint/FingerPrints.vue";
 import axiosData from "../Services/api";
@@ -135,9 +134,6 @@ interface FingerprintItem {
   status: "pending" | "captured" | "verified";
   quality: number;
 }
-
-const router = useRouter();
-
 const fullName = ref<string>("");
 const selectedCompany = ref<string>("");
 const selectedJob = ref<string>("");
@@ -169,14 +165,12 @@ watch(lastMessage, async (msg) => {
     // Convert base64 to Blob
     const base64Data = msg.data;
     const byteString = atob(base64Data.split(",")[1] || base64Data);
-    const mimeString =
-      base64Data.split(",")[0]?.split(":")[1]?.split(";")[0] || "image/png";
+    // Removed unused mimeString variable
     const ab = new ArrayBuffer(byteString.length);
     const ia = new Uint8Array(ab);
     for (let i = 0; i < byteString.length; i++) {
       ia[i] = byteString.charCodeAt(i);
     }
-    const blob = new Blob([ab], { type: mimeString });
 
     await uploadImage(base64Data);
 

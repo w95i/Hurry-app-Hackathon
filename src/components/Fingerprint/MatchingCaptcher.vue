@@ -11,7 +11,9 @@
     <div
       class="shadow-sm border border-[color:var(--border)] bg-[color:var(--bg-card)] rounded-lg p-8 max-w-3xl mx-auto space-y-6"
     >
-      <div class="images-wrapper w-full flex justify-center items-center gap-6">
+      <div
+        class="images-wrapper rounded-full w-full flex justify-center items-center gap-6"
+      >
         <i
           v-if="!imgSrc"
           class="ri-fingerprint-line text-[120px] text-[#5eff5e]"
@@ -20,7 +22,7 @@
           v-if="imgSrc"
           :src="imgSrc"
           alt="Captured"
-          class="border rounded-lg"
+          class="border rounded-full"
           style="max-width: 250px; max-height: 300px"
         />
         <UIcon
@@ -32,7 +34,7 @@
           v-if="imgSrc"
           :src="imgMatch ? imgMatch : placeholderImage"
           alt="Matched / Scanning"
-          class="border rounded-lg"
+          class="border rounded-full"
           style="max-width: 250px; max-height: 300px"
         />
         <span v-if="loading"></span>
@@ -210,7 +212,7 @@ function openMatchSocket() {
       loading.value = false;
       clearScanTimers();
 
-      imgMatch.value = `https://awa.lonar.net/${data.results[0].path}`;
+      imgMatch.value = `http://10.21.52.172:8080/${data.results[0].path}`;
       imageAccuracy.value = data.results[0].accuracy;
 
       percentage.value = data.similarity;
@@ -315,7 +317,6 @@ onBeforeUnmount(() => {
 <style scoped>
 .images-wrapper img {
   width: 250px;
-  height: 300px;
-  border-radius: 10px;
+  height: 250px;
 }
 </style>
